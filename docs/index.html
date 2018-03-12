@@ -1,13 +1,16 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>matminer (Materials Data Mining) &#8212; matminer 0.2.6 documentation</title>
+    
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -27,7 +30,7 @@
 <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -51,7 +54,7 @@
 <h1>matminer<a class="headerlink" href="#matminer" title="Permalink to this headline">¶</a></h1>
 <p>matminer is a Python library for data mining the properties of materials. It contains routines for obtaining data on materials properties from various databases, featurizing complex materials attributes (e.g., composition, crystal structure, band structure) into physically-relevant numerical quantities, and analyzing the results of data mining.</p>
 <p>matminer works with the <a class="reference external" href="https://pandas.pydata.org">pandas</a> data format in order to make various downstream machine learning libraries and tools available to materials science applications.</p>
-<p>matminer is <a class="reference external" href="https://github.com/hackingmaterials/matminer">open source</a>.</p>
+<p>matminer is <a class="reference external" href="https://github.com/hackingmaterials/matminer">open source</a> via a BSD-style license.</p>
 <div class="section" id="installing-matminer">
 <h2>Installing matminer<a class="headerlink" href="#installing-matminer" title="Permalink to this headline">¶</a></h2>
 <p>To install matminer, follow the short <a class="reference internal" href="installation.html"><span class="doc">installation tutorial.</span></a></p>
@@ -61,11 +64,11 @@
 <p>Matminer makes it easy to:</p>
 <ul class="simple">
 <li>obtain materials data from various sources into the <a class="reference external" href="https://pandas.pydata.org">pandas</a> data format. Through pandas, matminer enables professional-level data manipulation and analysis capabilities for materials data.</li>
-<li>transform and featurize complex materials attributes into numerical descriptors for data mining. For example, matminer can turn a composition such as “Fe3O4” into arrays of numbers representing things like average electronegativity or difference in ionic radii of the substituent elements. Matminer also contains sophisticated crystal structure and site featurizers (e.g., obtaining the coordination number or local environment of atoms in the structure) as well as featurizers for complex materials data such as band structures and density of states. All of these various featurizers are available under a consistent interface, making it easy to try different types of materials descriptors for an analysis and to transform materials science objects into physically-relevant numbers for data mining.</li>
+<li>transform and featurize complex materials attributes into numerical descriptors for data mining. For example, matminer can turn a composition such as &#8220;Fe3O4&#8221; into arrays of numbers representing things like average electronegativity or difference in ionic radii of the substituent elements. Matminer also contains sophisticated crystal structure and site featurizers (e.g., obtaining the coordination number or local environment of atoms in the structure) as well as featurizers for complex materials data such as band structures and density of states. All of these various featurizers are available under a consistent interface, making it easy to try different types of materials descriptors for an analysis and to transform materials science objects into physically-relevant numbers for data mining.</li>
 <li>perform data mining on materials. Although matminer itself does not contain implementations of machine learning algorithms, it makes it easy to prepare and transform data sets for use with standard data mining packages such as <a class="reference external" href="http://scikit-learn.org">scikit-learn</a>. See our examples for more details.</li>
 <li>generate interactive plots through an interface to the <a class="reference external" href="https://plot.ly">plotly</a> visualization package.</li>
 </ul>
-<p>A general workflow and overview of matminer’s capabilities is presented below:</p>
+<p>A general workflow and overview of matminer&#8217;s capabilities is presented below:</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
@@ -74,12 +77,12 @@
 <div class="line"><br /></div>
 <div class="line"><br /></div>
 </div>
-<p>Take a tour of matminer’s features by scrolling down!</p>
+<p>Take a tour of matminer&#8217;s features by scrolling down!</p>
 </div>
 <div class="section" id="data-retrieval-tools">
 <h2>Data retrieval tools<a class="headerlink" href="#data-retrieval-tools" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="retrieve-data-from-the-biggest-materials-databases-such-as-the-materials-project-and-citrine-s-databases-in-a-pandas-dataframe-format">
-<h3>Retrieve data from the biggest materials databases, such as the Materials Project and Citrine’s databases, in a Pandas dataframe format<a class="headerlink" href="#retrieve-data-from-the-biggest-materials-databases-such-as-the-materials-project-and-citrine-s-databases-in-a-pandas-dataframe-format" title="Permalink to this headline">¶</a></h3>
+<h3>Retrieve data from the biggest materials databases, such as the Materials Project and Citrine&#8217;s databases, in a Pandas dataframe format<a class="headerlink" href="#retrieve-data-from-the-biggest-materials-databases-such-as-the-materials-project-and-citrine-s-databases-in-a-pandas-dataframe-format" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://github.com/hackingmaterials/matminer/blob/master/matminer/data_retrieval/retrieve_MP.py">MPDataRetrieval</a> and <a class="reference external" href="https://github.com/hackingmaterials/matminer/blob/master/matminer/data_retrieval/retrieve_Citrine.py">CitrineDataRetrieval</a> classes can be used to retrieve data from the biggest open-source materials database collections of the <a class="reference external" href="https://www.materialsproject.org/">Materials Project</a> and <a class="reference external" href="https://citrination.com/">Citrine Informatics</a>, respectively, in a <a class="reference external" href="http://pandas.pydata.org/">Pandas</a> dataframe format. The data contained in these databases are a variety of material properties, obtained in-house or from other external databases, that are either calculated, measured from experiments, or learned from trained algorithms. The <code class="code docutils literal"><span class="pre">get_dataframe</span></code> method of these classes executes the data retrieval by searching the respective database using user-specified filters, such as compound/material, property type, etc , extracting the selected data in a JSON/dictionary format through the API, parsing it and output the result to a Pandas dataframe with columns as properties/features measured or calculated and rows as data points.</p>
 <p>For example, to compare experimental and computed band gaps of Si, one can employ the following lines of code:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matminer.data_retrieval.retrieve_Citrine</span> <span class="kn">import</span> <span class="n">CitrineDataRetrieval</span>
@@ -89,7 +92,7 @@
 <span class="n">df_mp</span> <span class="o">=</span> <span class="n">MPDataRetrieval</span><span class="p">()</span><span class="o">.</span><span class="n">get_dataframe</span><span class="p">(</span><span class="n">criteria</span><span class="o">=</span><span class="s1">&#39;Si&#39;</span><span class="p">,</span> <span class="n">properties</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;band_gap&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://github.com/hackingmaterials/matminer/blob/master/matminer/data_retrieval/retrieve_MongoDB.py">MongoDataRetrieval</a> is another data retrieval tool developed that allows for the parsing of any <a class="reference external" href="https://www.mongodb.com/">MongoDB</a> collection (which follows a flexible JSON schema), into a Pandas dataframe that has a format similar to the output dataframe from the above data retrieval tools. The arguments of the <code class="code docutils literal"><span class="pre">get_dataframe</span></code> method allow to utilize MongoDB’s rich and powerful query/aggregation syntax structure. More information on customization of queries can be found in the <a class="reference external" href="https://docs.mongodb.com/manual/">MongoDB documentation</a>.</p>
+<p><a class="reference external" href="https://github.com/hackingmaterials/matminer/blob/master/matminer/data_retrieval/retrieve_MongoDB.py">MongoDataRetrieval</a> is another data retrieval tool developed that allows for the parsing of any <a class="reference external" href="https://www.mongodb.com/">MongoDB</a> collection (which follows a flexible JSON schema), into a Pandas dataframe that has a format similar to the output dataframe from the above data retrieval tools. The arguments of the <code class="code docutils literal"><span class="pre">get_dataframe</span></code> method allow to utilize MongoDB&#8217;s rich and powerful query/aggregation syntax structure. More information on customization of queries can be found in the <a class="reference external" href="https://docs.mongodb.com/manual/">MongoDB documentation</a>.</p>
 </div>
 </div>
 <div class="section" id="data-descriptor-tools">
@@ -105,7 +108,7 @@
 <div class="section" id="plot-data-from-either-arrays-or-dataframes-using-either-plotly-or-matplotlib-with-figrecipes">
 <h3>Plot data from either arrays or dataframes using either <a class="reference external" href="https://plot.ly/">Plotly</a> or <a class="reference external" href="http://matplotlib.org/">matplotlib</a> with figrecipes<a class="headerlink" href="#plot-data-from-either-arrays-or-dataframes-using-either-plotly-or-matplotlib-with-figrecipes" title="Permalink to this headline">¶</a></h3>
 <p>In the figrecipes module of the matminer library, we have developed utilities that make it easier and faster to plot common figures with Plotly and matplotlib. The figrecipes module is aimed at making it easy for the user to create plots from their data using just a few lines of code, utilizing the wide and flexible functionality of Plotly and matplotlib, while at the same time sheilding the complexities involved.</p>
-<p>The Plotly module contains the <code class="code docutils literal"><span class="pre">PlotlyFig</span></code> class that wraps around Plotly’s Python API and follows its JSON schema. The matplotlib module contains plotting wrapper classes for each kind of popular plot, including XY-scatter plots and heat maps.</p>
+<p>The Plotly module contains the <code class="code docutils literal"><span class="pre">PlotlyFig</span></code> class that wraps around Plotly&#8217;s Python API and follows its JSON schema. The matplotlib module contains plotting wrapper classes for each kind of popular plot, including XY-scatter plots and heat maps.</p>
 <p>For now, check out the examples below to see how to use the plotting functionality.</p>
 </div>
 </div>
@@ -113,10 +116,13 @@
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>Check out some examples of how to use matminer!</p>
 <ol class="arabic simple">
-<li>Use matminer and scikit-learn to create a model that predicts bulk modulus of materials. (<a class="reference external" href="https://gist.github.com/computron/660f76810ad8d07a43b696028a6cd59f">Jupyter Notebook</a>)</li>
-<li>Get all experimentally measured band gaps of PbTe from Citrine’s database (<a class="reference external" href="https://gist.github.com/saurabh02/cf37de8ab77505a05e1bec952f0cb0c3">Jupyter Notebook</a>)</li>
-<li>Compare and plot experimentally band gaps from Citrine with computed values from the Materials Project (<a class="reference external" href="https://gist.github.com/saurabh02/8f7727b2ed1f95d2a40fdefd0a90bec0">Jupyter Notebook</a>)</li>
-<li>Analyze Uranium-Oxygen bond lengths from gathered from the MPDS database. (<a class="reference external" href="https://gist.github.com/blokhin/a9eddca705aa6d54552bc8b6d7bddbb8">Jupyter Notebook</a>)</li>
+<li>Use matminer and scikit-learn to create a model that predicts bulk modulus of materials. (<a class="reference external" href="https://nbviewer.jupyter.org/github/hackingmaterials/matminer_examples/blob/master/notebooks/experiment_vs_computed_bandgap.ipynb">Jupyter Notebook</a>)</li>
+<li>Compare and plot experimentally band gaps from Citrine with computed values from the Materials Project (<a class="reference external" href="https://nbviewer.jupyter.org/github/hackingmaterials/matminer_examples/blob/master/notebooks/experiment_vs_computed_bandgap.ipynb">Jupyter Notebook</a>)</li>
+<li>Compare and plot U-O bond lengths in various compounds from the MPDS (<a class="reference external" href="https://nbviewer.jupyter.org/github/hackingmaterials/matminer_examples/blob/master/notebooks/u-o_bondlength_analysis.ipynb">Jupyter Notebook</a>)</li>
+<li>Retrieve data from various online materials repositories (<a class="reference external" href="https://nbviewer.jupyter.org/github/hackingmaterials/matminer_examples/blob/master/notebooks/data_retrieval_basics.ipynb">Jupyter Notebook</a>)</li>
+<li>Basic Visualization using FigRecipes (<a class="reference external" href="https://nbviewer.jupyter.org/github/hackingmaterials/matminer_examples/blob/master/notebooks/visualization_with_figrecipes.ipynb">Jupyter Notebook</a>)</li>
+<li>Advanced Visualization (<a class="reference external" href="https://nbviewer.jupyter.org/github/hackingmaterials/matminer_examples/blob/master/notebooks/advanced_visualization.ipynb">Jupyter Notebook</a>)</li>
+<li>Running a kernel ridge regression model on vector descriptors (<a class="reference external" href="https://github.com/hackingmaterials/matminer_examples/blob/master/scripts/kernel_ridge_SCM_OFM.py">Python script</a>)</li>
 </ol>
 </div>
 <div class="section" id="citing-matminer">
@@ -129,9 +135,9 @@
 </div>
 <div class="section" id="contributions-and-bug-reports">
 <h2>Contributions and Bug Reports<a class="headerlink" href="#contributions-and-bug-reports" title="Permalink to this headline">¶</a></h2>
-<p>Want to see something added or changed? Here’s a few ways you can!</p>
+<p>Want to see something added or changed? Here&#8217;s a few ways you can!</p>
 <ul class="simple">
-<li>Help us improve the documentation. Tell us where you got ‘stuck’ and improve the install process for everyone.</li>
+<li>Help us improve the documentation. Tell us where you got &#8216;stuck&#8217; and improve the install process for everyone.</li>
 <li>Let us know about areas of the code that are difficult to understand or use.</li>
 <li>Contribute code! Fork our <a class="reference external" href="https://github.com/hackingmaterials/matminer">Github repo</a> and make a pull request.</li>
 </ul>
@@ -161,7 +167,7 @@
 <li><a class="reference internal" href="#installing-matminer">Installing matminer</a></li>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#data-retrieval-tools">Data retrieval tools</a><ul>
-<li><a class="reference internal" href="#retrieve-data-from-the-biggest-materials-databases-such-as-the-materials-project-and-citrine-s-databases-in-a-pandas-dataframe-format">Retrieve data from the biggest materials databases, such as the Materials Project and Citrine’s databases, in a Pandas dataframe format</a></li>
+<li><a class="reference internal" href="#retrieve-data-from-the-biggest-materials-databases-such-as-the-materials-project-and-citrine-s-databases-in-a-pandas-dataframe-format">Retrieve data from the biggest materials databases, such as the Materials Project and Citrine&#8217;s databases, in a Pandas dataframe format</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#data-descriptor-tools">Data descriptor tools</a><ul>
@@ -217,7 +223,7 @@
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Anubhav Jain.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 
   </body>

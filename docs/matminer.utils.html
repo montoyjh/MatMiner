@@ -1,13 +1,16 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>matminer.utils package &#8212; matminer 0.2.6 documentation</title>
+    
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -27,7 +30,7 @@
 <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -77,7 +80,7 @@
 <dl class="function">
 <dt id="matminer.utils.conversions.composition_to_oxidcomposition">
 <code class="descclassname">matminer.utils.conversions.</code><code class="descname">composition_to_oxidcomposition</code><span class="sig-paren">(</span><em>series</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#matminer.utils.conversions.composition_to_oxidcomposition" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds oxidation states to a Composition using pymatgen’s guessing routines</p>
+<dd><p>Adds oxidation states to a Composition using pymatgen&#8217;s guessing routines</p>
 <dl class="docutils">
 <dt>Args:</dt>
 <dd>series: a pd.Series with Composition object components
@@ -118,7 +121,7 @@ pymatgen Structure.as_dict()</dd>
 <dd><p>Converts a String series to a Composition series</p>
 <dl class="docutils">
 <dt>Args:</dt>
-<dd>series: a pd.Series with str components, e.g. “Fe2O3”
+<dd>series: a pd.Series with str components, e.g. &#8220;Fe2O3&#8221;
 reduce: (bool) whether to return a reduced Composition</dd>
 <dt>Returns:</dt>
 <dd>a pd.Series with pymatgen Composition components</dd>
@@ -141,7 +144,7 @@ reduce: (bool) whether to return a reduced Composition</dd>
 <dl class="function">
 <dt id="matminer.utils.conversions.structure_to_oxidstructure">
 <code class="descclassname">matminer.utils.conversions.</code><code class="descname">structure_to_oxidstructure</code><span class="sig-paren">(</span><em>series</em>, <em>inplace=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#matminer.utils.conversions.structure_to_oxidstructure" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds oxidation states to a Structure using pymatgen’s guessing routines</p>
+<dd><p>Adds oxidation states to a Structure using pymatgen&#8217;s guessing routines</p>
 <dl class="docutils">
 <dt>Args:</dt>
 <dd>series: a pd.Series with Structure object components
@@ -203,7 +206,7 @@ property_name - (str) property to be retreived</dd>
 
 <dl class="method">
 <dt id="matminer.utils.data.CohesiveEnergyData.get_elemental_property">
-<code class="descname">get_elemental_property</code><span class="sig-paren">(</span><em>elem</em>, <em>property_name='cohesive energy'</em><span class="sig-paren">)</span><a class="headerlink" href="#matminer.utils.data.CohesiveEnergyData.get_elemental_property" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_elemental_property</code><span class="sig-paren">(</span><em>elem</em>, <em>property_name=u'cohesive energy'</em><span class="sig-paren">)</span><a class="headerlink" href="#matminer.utils.data.CohesiveEnergyData.get_elemental_property" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Args:</dt>
 <dd>elem: (Element) Element of interest
@@ -220,7 +223,7 @@ property_name (str): unused, always returns cohesive energy</dd>
 <em class="property">class </em><code class="descclassname">matminer.utils.data.</code><code class="descname">DemlData</code><a class="headerlink" href="#matminer.utils.data.DemlData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#matminer.utils.data.OxidationStateDependentData" title="matminer.utils.data.OxidationStateDependentData"><code class="xref py py-class docutils literal"><span class="pre">matminer.utils.data.OxidationStateDependentData</span></code></a>, <a class="reference internal" href="#matminer.utils.data.OxidationStatesMixin" title="matminer.utils.data.OxidationStatesMixin"><code class="xref py py-class docutils literal"><span class="pre">matminer.utils.data.OxidationStatesMixin</span></code></a></p>
 <p>Class to get data from Deml data file. See also: A.M. Deml,
-R. O’Hayre, C. Wolverton, V. Stevanovic, Predicting density functional
+R. O&#8217;Hayre, C. Wolverton, V. Stevanovic, Predicting density functional
 theory total energies and enthalpies of formation of metal-nonmetal
 compounds by linear regression, Phys. Rev. B - Condens. Matter Mater. Phys.
 93 (2016).</p>
@@ -375,7 +378,7 @@ common - (boolean), whether to return only the common oxidation states,</p>
 <dd><p>Helper function to flatten nested dictionary, recursively
 walks through nested dictionary to get keys corresponding
 to dot-notation keys, e. g. converts
-{“a”: {“b”: 1, “c”: 2}} to {“a.b”: 1, “a.c”: 2}</p>
+{&#8220;a&#8221;: {&#8220;b&#8221;: 1, &#8220;c&#8221;: 2}} to {&#8220;a.b&#8221;: 1, &#8220;a.c&#8221;: 2}</p>
 <dl class="docutils">
 <dt>Args:</dt>
 <dd><p class="first">nested_dict ({}): nested dictionary to flatten
@@ -406,9 +409,9 @@ To declare a static method, use this idiom:</p>
 <div><dl class="docutils">
 <dt>class C:</dt>
 <dd><p class="first">&#64;staticmethod
-def f(arg1, arg2, …):</p>
+def f(arg1, arg2, ...):</p>
 <blockquote class="last">
-<div>…</div></blockquote>
+<div>...</div></blockquote>
 </dd>
 </dl>
 </div></blockquote>
@@ -429,9 +432,9 @@ To declare a static method, use this idiom:</p>
 <div><dl class="docutils">
 <dt>class C:</dt>
 <dd><p class="first">&#64;staticmethod
-def f(arg1, arg2, …):</p>
+def f(arg1, arg2, ...):</p>
 <blockquote class="last">
-<div>…</div></blockquote>
+<div>...</div></blockquote>
 </dd>
 </dl>
 </div></blockquote>
@@ -503,7 +506,7 @@ For a more advanced concept, see the classmethod builtin.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Anubhav Jain.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 
   </body>

@@ -7,7 +7,7 @@ import json
 import webbrowser
 import requests
 from invoke import task
-from matminer import __version__
+from matminer import __version__ as CURRENT_VER
 from monty.os import cd
 
 
@@ -41,7 +41,7 @@ def update_doc(ctx):
     make_doc(ctx)
     with cd("docs"):
         ctx.run("git add .")
-        ctx.run("git commit -a -m \"Update to v{}\"".format(__version__))
+        ctx.run("git commit -a -m \"Update to v{}\"".format(CURRENT_VER))
         ctx.run("git push")
 
 @task

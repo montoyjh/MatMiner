@@ -1,13 +1,16 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>Predicting bulk moduli with matminer &#8212; matminer 0.2.6 documentation</title>
+    
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -27,7 +30,7 @@
 <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -52,7 +55,7 @@
 <h2>Fit data mining models to ~6000 calculated bulk moduli from Materials Project<a class="headerlink" href="#fit-data-mining-models-to-6000-calculated-bulk-moduli-from-materials-project" title="Permalink to this headline">¶</a></h2>
 <p><strong>Time to complete: 30 minutes</strong></p>
 <p>This notebook is an example of using the MP data retrieval tool <code class="code docutils literal"><span class="pre">retrieve_MP.py</span></code> to retrieve computed bulk moduli from
-<a class="reference external" href="https://materialsproject.org/">the materials project databases</a> in the form of a pandas dataframe, using matminer’s tools to populate
+<a class="reference external" href="https://materialsproject.org/">the materials project databases</a> in the form of a pandas dataframe, using matminer&#8217;s tools to populate
 the dataframe with descriptors/features from pymatgen, and then fitting regression models from the scikit-learn library to
 the dataset.</p>
 <div class="section" id="preamble">
@@ -73,8 +76,8 @@ the dataset.</p>
 </div>
 </div>
 <div class="section" id="step-1-use-matminer-to-obtain-data-from-mp-automatically-in-a-pandas-dataframe">
-<h3>Step 1: Use matminer to obtain data from MP (automatically) in a “pandas” dataframe<a class="headerlink" href="#step-1-use-matminer-to-obtain-data-from-mp-automatically-in-a-pandas-dataframe" title="Permalink to this headline">¶</a></h3>
-<p><strong>Step 1a: Import matminer’s MP data retrieval tool and get calculated bulk moduli and possible descriptors.</strong></p>
+<h3>Step 1: Use matminer to obtain data from MP (automatically) in a &#8220;pandas&#8221; dataframe<a class="headerlink" href="#step-1-use-matminer-to-obtain-data-from-mp-automatically-in-a-pandas-dataframe" title="Permalink to this headline">¶</a></h3>
+<p><strong>Step 1a: Import matminer&#8217;s MP data retrieval tool and get calculated bulk moduli and possible descriptors.</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matminer.data_retrieval.retrieve_MP</span> <span class="kn">import</span> <span class="n">MPDataRetrieval</span>
 
 <span class="n">api_key</span> <span class="o">=</span> <span class="bp">None</span>   <span class="c1"># Set your MP API key here. If set as an environment variable &#39;MAPI_KEY&#39;, set it to &#39;None&#39;</span>
@@ -116,7 +119,7 @@ the dataset.</p>
 <span class="n">df_mp</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Step 2b: add several more descriptors using MatMiner’s pymatgen descriptor getter tools</strong></p>
+<p><strong>Step 2b: add several more descriptors using MatMiner&#8217;s pymatgen descriptor getter tools</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matminer.featurizers.composition</span> <span class="kn">import</span> <span class="n">ElementProperty</span>
 <span class="kn">from</span> <span class="nn">matminer.featurizers.data</span> <span class="kn">import</span> <span class="n">PymatgenData</span>
 <span class="kn">from</span> <span class="nn">pymatgen</span> <span class="kn">import</span> <span class="n">Composition</span>
@@ -226,8 +229,8 @@ the dataset.</p>
            <span class="n">add_xy_plot</span><span class="o">=</span><span class="p">[</span><span class="n">xy_params</span><span class="p">])</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="_images/example_bulkmod.png"><img alt="_images/example_bulkmod.png" src="_images/example_bulkmod.png" style="width: 630.0px; height: 496.99999999999994px;" /></a>
-<p>Great! We just fit a linear regression model to pymatgen features using matminer and sklearn. Now let’s use a Random
+<a class="reference internal image-reference" href="_images/example_bulkmod.png"><img alt="_images/example_bulkmod.png" src="_images/example_bulkmod.png" style="width: 630.0px; height: 497.0px;" /></a>
+<p>Great! We just fit a linear regression model to pymatgen features using matminer and sklearn. Now let&#8217;s use a Random
 Forest model to examine the importance of our features.</p>
 </div>
 <div class="section" id="step-5-follow-similar-steps-for-a-random-forest-model">
@@ -292,7 +295,7 @@ Forest model to examine the importance of our features.</p>
               <span class="n">add_xy_plot</span><span class="o">=</span><span class="p">[</span><span class="n">xy_line</span><span class="p">])</span>
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="_images/example_bulkmod_rf.png"><img alt="_images/example_bulkmod_rf.png" src="_images/example_bulkmod_rf.png" style="width: 646.4000000000001px; height: 517.6px;" /></a>
+<a class="reference internal image-reference" href="_images/example_bulkmod_rf.png"><img alt="_images/example_bulkmod_rf.png" src="_images/example_bulkmod_rf.png" style="width: 646.4px; height: 517.6px;" /></a>
 <p><strong>Step 6b: Plot the importance of the features we used</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">importances</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">feature_importances_</span>
 <span class="n">X_cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">X_cols</span><span class="p">)</span>
@@ -326,7 +329,7 @@ Forest model to examine the importance of our features.</p>
 <li><a class="reference internal" href="#">Predicting bulk moduli with matminer</a><ul>
 <li><a class="reference internal" href="#fit-data-mining-models-to-6000-calculated-bulk-moduli-from-materials-project">Fit data mining models to ~6000 calculated bulk moduli from Materials Project</a><ul>
 <li><a class="reference internal" href="#preamble">Preamble</a></li>
-<li><a class="reference internal" href="#step-1-use-matminer-to-obtain-data-from-mp-automatically-in-a-pandas-dataframe">Step 1: Use matminer to obtain data from MP (automatically) in a “pandas” dataframe</a></li>
+<li><a class="reference internal" href="#step-1-use-matminer-to-obtain-data-from-mp-automatically-in-a-pandas-dataframe">Step 1: Use matminer to obtain data from MP (automatically) in a &#8220;pandas&#8221; dataframe</a></li>
 <li><a class="reference internal" href="#step-2-add-descriptors-features">Step 2: Add descriptors/features</a></li>
 <li><a class="reference internal" href="#step-3-fit-a-linear-regression-model-get-r2-and-rmse">Step 3: Fit a Linear Regression model, get R<sup>2</sup> and RMSE</a></li>
 <li><a class="reference internal" href="#step-4-plot-the-results-with-figrecipes">Step 4: Plot the results with FigRecipes</a></li>
@@ -374,7 +377,7 @@ Forest model to examine the importance of our features.</p>
 
     <div class="footer" role="contentinfo">
         &#169; Copyright 2015, Anubhav Jain.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
     </div>
 
   </body>

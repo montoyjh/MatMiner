@@ -1,11 +1,11 @@
-matminer\.utils\.data\_files package
-====================================
+matminer.utils.data_files package
+=================================
 
 Submodules
 ----------
 
-matminer\.utils\.data\_files\.deml\_elementdata module
-------------------------------------------------------
+matminer.utils.data_files.deml_elementdata module
+-------------------------------------------------
 
 .. automodule:: matminer.utils.data_files.deml_elementdata
     :members:
